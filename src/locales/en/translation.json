@@ -1,11 +1,18 @@
 {
-  "app": {
-	"title": "Wand AI",
-	"subtitle": "Multi-Agent Task Solver"
-  },
-  "common": {
-	"loading": "Loading...",
-	"error": "Error",
-	"success": "Success"
-  }
+	"app": {
+		"title": "WAND AI"
+	},
+	"welcome": {
+		"message1": "Building intelligent systems that adapt",
+		"message2": "Connecting minds with machine intelligence",
+		"message3": "Creating solutions that evolve",
+		"message4": "Transforming data into decisions",
+		"message5": "Empowering innovation through automation",
+		"description": "Orchestrate autonomous agents that collaborate seamlessly, process information intelligently, and deliver results with precision and speed"
+	},
+	"card": {
+		"title": "Launch Platform",
+		"description": "Experience AI agents and watch them collaborate in real-time, solving complex problems with intelligent coordination",
+		"button": "Get Started"
+	}
 }
