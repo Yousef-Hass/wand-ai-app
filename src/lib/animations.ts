@@ -25,11 +25,6 @@ export const COMMON_ANIMATIONS = {
 		animate: { opacity: 1, y: 0 },
 		transition: { duration: ANIMATION_DURATION.NORMAL },
 	},
-	FADE_IN_UP_DELAYED: {
-		initial: { opacity: 0, y: 20 },
-		animate: { opacity: 1, y: 0 },
-		transition: { duration: ANIMATION_DURATION.NORMAL, delay: ANIMATION_DELAY.SMALL },
-	},
 	SCALE_HOVER: {
 		whileHover: { scale: 1.05 },
 		whileTap: { scale: 0.95 },
@@ -48,3 +43,4 @@ export const generateRandomPositions = (count: number) =>
 		x: Math.random() * 100,
 		y: Math.random() * 100,
 	}));
+

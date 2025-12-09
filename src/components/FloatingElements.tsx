@@ -1,5 +1,5 @@
-import { Brain, Cpu, Sparkles, Zap } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Brain, Cpu, Sparkles, Zap } from 'lucide-react';
 import { ANIMATION_EASING } from '../lib/animations';
 
 const FloatingElements = () => {
@@ -10,7 +10,7 @@ const FloatingElements = () => {
 			{icons.map((Icon, index) => (
 				<motion.div
 					key={index}
-					className="absolute text-emerald-400/30"
+					className="absolute text-blue-400/30"
 					style={{
 						left: `${20 + index * 20}%`,
 						top: `${30 + (index % 2) * 40}%`,

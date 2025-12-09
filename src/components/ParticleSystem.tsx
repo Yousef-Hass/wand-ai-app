@@ -1,44 +1,99 @@
-import { useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { ANIMATION_EASING, generateRandomPositions, generateRandomValues } from '../lib/animations';
-import { APP_CONFIG } from '../lib/constants';
+import { ANIMATION_EASING } from '../lib/animations';
 
 const ParticleSystem = () => {
-	const particles = useMemo(() =>
-		Array.from({ length: APP_CONFIG.PARTICLES_COUNT }, (_, i) => ({
-			id: i,
-			position: generateRandomPositions(1)[0],
-			size: generateRandomValues(1, APP_CONFIG.PARTICLE_SIZE_RANGE.min, APP_CONFIG.PARTICLE_SIZE_RANGE.max)[0],
-			duration: generateRandomValues(1, APP_CONFIG.ANIMATION_DURATION_RANGE.min, APP_CONFIG.ANIMATION_DURATION_RANGE.max)[0],
-			delay: generateRandomValues(1, 0, 5)[0],
-		})), []
-	);
+	const generateWavePath = (amplitude: number, frequency: number, phase: number) => {
+		let path = 'M 0,100';
+		const width = 1200;
+		const steps = 100;
+		
+		for (let i = 0; i <= steps; i++) {
+			const x = (i / steps) * width;
+			const y = 100 - amplitude * Math.sin((x * frequency + phase) * Math.PI * 2);
+			path += ` L ${x},${y}`;
+		}
+		path += ' L 1200,100 Z';
+		return path;
+	};
 
 	return (
 		<div className="absolute inset-0 overflow-hidden pointer-events-none">
-			{particles.map((particle) => (
-				<motion.div
-					key={particle.id}
-					className="absolute rounded-full bg-emerald-400/30"
-					style={{
-						left: `${particle.position.x}%`,
-						top: `${particle.position.y}%`,
-						width: particle.size,
-						height: particle.size,
-					}}
+			<motion.svg
+				className="absolute bottom-0 left-0 w-full"
+				style={{ height: '50%' }}
+				preserveAspectRatio="none"
+				viewBox="0 0 1200 100"
+			>
+				<motion.path
+					d={generateWavePath(15, 0.005, 0)}
+					fill="rgba(59, 130, 246, 0.25)"
 					animate={{
-						y: [0, -100, 0],
-						opacity: [0, 1, 0],
-						scale: [0, 1, 0],
+						d: [
+							generateWavePath(15, 0.005, 0),
+							generateWavePath(15, 0.005, 0.5),
+							generateWavePath(15, 0.005, 1),
+						],
+						x: [0, -200, -400],
 					}}
 					transition={{
-						duration: particle.duration,
-						delay: particle.delay,
+						duration: 8,
 						repeat: Infinity,
-						ease: ANIMATION_EASING.EASE_IN_OUT,
+						ease: ANIMATION_EASING.LINEAR,
 					}}
 				/>
-			))}
+			</motion.svg>
+			
+			<motion.svg
+				className="absolute bottom-0 left-0 w-full"
+				style={{ height: '40%' }}
+				preserveAspectRatio="none"
+				viewBox="0 0 1200 100"
+			>
+				<motion.path
+					d={generateWavePath(20, 0.004, 0)}
+					fill="rgba(16, 185, 129, 0.2)"
+					animate={{
+						d: [
+							generateWavePath(20, 0.004, 0),
+							generateWavePath(20, 0.004, 0.5),
+							generateWavePath(20, 0.004, 1),
+						],
+						x: [-100, -300, -500],
+					}}
+					transition={{
+						duration: 10,
+						delay: 1,
+						repeat: Infinity,
+						ease: ANIMATION_EASING.LINEAR,
+					}}
+				/>
+			</motion.svg>
+			
+			<motion.svg
+				className="absolute bottom-0 left-0 w-full"
+				style={{ height: '35%' }}
+				preserveAspectRatio="none"
+				viewBox="0 0 1200 100"
+			>
+				<motion.path
+					d={generateWavePath(18, 0.006, 0)}
+					fill="rgba(59, 130, 246, 0.15)"
+					animate={{
+						d: [
+							generateWavePath(18, 0.006, 0),
+							generateWavePath(18, 0.006, 0.5),
+							generateWavePath(18, 0.006, 1),
+						],
+						x: [100, -100, -300],
+					}}
+					transition={{
+						duration: 12,
+						delay: 2,
+						repeat: Infinity,
+						ease: ANIMATION_EASING.LINEAR,
+					}}
+				/>
+			</motion.svg>
 		</div>
 	);
 };

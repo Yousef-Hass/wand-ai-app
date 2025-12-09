@@ -4,7 +4,7 @@ import { ANIMATION_EASING, generateRandomPositions, generateRandomValues } from 
 import { APP_CONFIG } from '../lib/constants';
 import { theme } from '../lib/theme';
 
-const AnimatedBackground = () => {
+const HomeBackground = () => {
 	const orbData = useMemo(() =>
 		Array.from({ length: APP_CONFIG.FLOATING_ORBS_COUNT }, (_, i) => ({
 			id: i,
@@ -23,7 +23,7 @@ const AnimatedBackground = () => {
 			{orbData.map((orb) => (
 				<motion.div
 					key={orb.id}
-					className={`absolute rounded-full bg-gradient-to-r ${theme.colors.gradients.greenToRedOpacity} blur-xl`}
+					className={`absolute rounded-full bg-gradient-to-r ${theme.colors.gradients.navyToGreenOpacity} blur-xl`}
 					style={{
 						width: orb.size,
 						height: orb.size,
@@ -43,7 +43,7 @@ const AnimatedBackground = () => {
 				/>
 			))}
 
-			<div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-emerald-900/30 to-slate-900" />
+			<div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900/30 to-slate-900" />
 
 			<motion.div
 				className="absolute inset-0 opacity-20"
@@ -61,4 +61,4 @@ const AnimatedBackground = () => {
 	);
 };
 
-export default AnimatedBackground;
+export default HomeBackground;

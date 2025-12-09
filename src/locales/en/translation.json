@@ -1,18 +1,39 @@
 {
 	"app": {
-		"title": "WAND AI"
+	  "title": "WAND AI"
 	},
 	"welcome": {
-		"message1": "Building intelligent systems that adapt",
-		"message2": "Connecting minds with machine intelligence",
-		"message3": "Creating solutions that evolve",
-		"message4": "Transforming data into decisions",
-		"message5": "Empowering innovation through automation",
-		"description": "Orchestrate autonomous agents that collaborate seamlessly, process information intelligently, and deliver results with precision and speed"
+	  "message1": "Building intelligent systems that adapt",
+	  "message2": "Connecting minds with machine intelligence",
+	  "message3": "Creating solutions that evolve",
+	  "message4": "Transforming data into decisions",
+	  "message5": "Empowering innovation through automation",
+	  "description": "Orchestrate autonomous agents that collaborate seamlessly, process information intelligently, and deliver results with precision and speed"
 	},
 	"card": {
-		"title": "Launch Platform",
-		"description": "Experience AI agents and watch them collaborate in real-time, solving complex problems with intelligent coordination",
-		"button": "Get Started"
+	  "title": "Ready to Begin?",
+	  "description": "Experience AI agents and watch them collaborate in real-time, solving complex problems with intelligent coordination",
+	  "button": "Get Started"
+	},
+	"search": {
+	  "title": "Unleash Intelligence",
+	  "subtitle": "Ask anything and watch intelligent agents collaborate to deliver comprehensive answers",
+	  "placeholder": "Describe your business challenge...",
+	  "suggestion1": "Analyze Q3 sales performance",
+	  "suggestion2": "Create a marketing strategy",
+	  "suggestion3": "Optimize supply chain efficiency",
+	  "suggestion4": "Generate financial report",
+	  "feature1": {
+		"title": "AI Agents",
+		"desc": "Multiple specialized agents work together"
+	  },
+	  "feature2": {
+		"title": "Real-time Updates",
+		"desc": "Watch progress as agents complete tasks"
+	  },
+	  "feature3": {
+		"title": "Smart Synthesis",
+		"desc": "Intelligent combination of results"
+	  }
 	}
-}
+  }
